@@ -1,0 +1,113 @@
+@import 'themes';
+@import '~@nebular/theme/styles/globals';
+@include nb-install() {
+    @include nb-theme-global();
+}
+
+$font-stack: 'Roboto';
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: $font-stack;
+}
+
+html * {
+    font-family: $font-stack !important;
+}
+
+nb-card {
+    margin-bottom: 0 !important;
+}
+
+nb-card.div-container {
+    height: 100%;
+}
+
+nb-card-body {
+    padding: 15px !important;
+}
+
+nb-card-body.nb-card-body-has-fixed-header {
+    padding: 0px !important;
+    margin: 15px !important;
+}
+
+ngx-file-drop *.ngx-file-drop__content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    color: #0782d0 !important;
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 15px !important;
+}
+
+ngx-file-drop *.ngx-file-drop__drop-zone {
+    height: auto !important;
+    margin: auto !important;
+    border: 2px dotted #0782d0 !important;
+    border-radius: 10px !important;
+}
+
+ngx-file-drop.ngx-file-drop-full-height *.ngx-file-drop__content {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    color: #0782d0 !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    padding: 0px !important;
+}
+
+ngx-file-drop.ngx-file-drop-full-height *.ngx-file-drop__drop-zone {
+    height: 100% !important;
+    margin: 0px !important;
+    border: 0px dotted #0782d0 !important;
+    border-radius: 0px !important;
+}
+
+table.nb-tree-grid-table-fixed-header {
+    width: auto !important;
+    max-width: auto !important;
+}
+
+table.nb-tree-grid-table-fixed-header th {
+    position: sticky !important;
+    top: 0px !important;
+    z-index: 1 !important;
+    width: auto !important;
+    padding: 0px !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+table.nb-tree-grid-table-fixed-header th * {
+    width: 100% !important;
+    border-radius: 0px !important;
+}
+
+nb-layout-footer nav {
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+nb-layout-header nav {
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+nb-card.nb-card-dialog {
+    width: 600px;
+    height: 600px;
+}
+
+nb-card-header.detail-view {
+    text-transform: uppercase !important;
+    justify-content: space-between !important;
+    padding: 20px !important;
+}

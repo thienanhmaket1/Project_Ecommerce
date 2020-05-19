@@ -1,0 +1,14 @@
+<div class="div-container">
+    <div class="div-login" [formGroup]="authFormGroup">
+        <h1>Login</h1>
+        <div style="margin-top: 20px; width: 100%;">
+            <input nbInput fullWidth placeholder="Username" formControlName="usernameFormControl" required />
+        </div>
+        <div style="margin-top: 15px; width: 100%;">
+            <input type="password" nbInput fullWidth placeholder="Password" formControlName="passwordFormControl" required />
+        </div>
+        <button (click)="login()" nbButton style="margin-top: 15px; width: 100%;">Go</button>
+        <p>Do you have a account?<a style="text-decoration: none;" href="http://localhost:4200/register">Register</a></p>
+    </div>
+</div>
+

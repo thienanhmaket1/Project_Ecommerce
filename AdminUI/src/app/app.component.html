@@ -1,0 +1,28 @@
+<nb-layout>
+  <nb-layout-header fixed style="height: 76px !important;">
+      <div
+          style="
+              display: flex;
+              flex: 1;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+          "
+      >
+          <span style="font-size: 22px; font-weight: bold;">Administrator</span>
+          <div style="display: flex; flex-direction: row;">
+            
+          </div>
+      </div>
+  </nb-layout-header>
+
+  <nb-layout-column style="padding: 5px 0px;">
+      <div id="div-main-layout">
+          <router-outlet></router-outlet>
+      </div>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed style="height: 50px !important;">
+      © Make by Thiên Anh
+  </nb-layout-footer>
+</nb-layout>
