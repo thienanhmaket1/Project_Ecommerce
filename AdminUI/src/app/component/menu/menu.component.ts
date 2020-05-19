@@ -1,9 +1,9 @@
-import { defaultTopItems, defaultBottomItems } from './../../../common/constants';
+import { defaultTopItems, defaultBottomItems, adminItems } from './../../../common/constants';
 import { SharedService } from './../../service/shared.service';
 import { AuthService } from './../../auth/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { NbMenuService } from '@nebular/theme';
+import { NbMenuService, NbMenuItem } from '@nebular/theme';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +12,9 @@ import { NbMenuService } from '@nebular/theme';
 })
 export class MenuComponent implements OnInit {
 
+    
   menuStatus
+  adminItems: NbMenuItem[] = adminItems
   items = []
 
   constructor(private nbMenuService: NbMenuService, private router: Router, private authService: AuthService, private sharedService: SharedService) { 
@@ -33,7 +35,8 @@ export class MenuComponent implements OnInit {
   }
 
   changeToNormalMode() {
-    const { user_permission_code } = this.authService.getUserValue
+    // const { user_id } = this.authService.getUserValue
+    this.items = adminItems
     this.items = [...defaultTopItems, ...this.items, ...defaultBottomItems]
     this.sharedService.setMenuStatus('normal')
 

@@ -14,6 +14,9 @@ import { MenuComponent } from './component/menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './dashboard/users/users.component';
 import { RegisterComponent } from './register/register.component';
+import { CategoryComponent } from './dashboard/category/category.component';
+import { ProductComponent } from './dashboard/product/product.component';
+import { OrdersComponent } from './dashboard/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { RegisterComponent } from './register/register.component';
     MenuComponent,
     UsersComponent,
     RegisterComponent,
+    CategoryComponent,
+    ProductComponent,
+    OrdersComponent,
     
   ],
   imports: [

@@ -1,3 +1,6 @@
+import { OrdersComponent } from './dashboard/orders/orders.component';
+import { ProductComponent } from './dashboard/product/product.component';
+import { CategoryComponent } from './dashboard/category/category.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminGuard } from './guard/admin.guard';
 import { UsersComponent } from './dashboard/users/users.component';
@@ -18,6 +21,7 @@ const routes: Routes = [
   {
     path: 'register',
         component: RegisterComponent,
+        // canActivate: [UnauthGuard],
   },
   {
     path: 'dashboard',
@@ -27,6 +31,21 @@ const routes: Routes = [
         {
           path: 'users',
           component: UsersComponent,
+          // canActivate: [AdminGuard],
+        },
+        {
+          path: 'category',
+          component: CategoryComponent,
+          // canActivate: [AdminGuard],
+        },
+        {
+          path: 'product',
+          component: ProductComponent,
+          // canActivate: [AdminGuard],
+        },
+        {
+          path: 'orders',
+          component: OrdersComponent,
           // canActivate: [AdminGuard],
         },
     ],
