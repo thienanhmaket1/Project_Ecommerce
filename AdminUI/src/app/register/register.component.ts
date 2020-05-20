@@ -17,22 +17,19 @@ export class RegisterComponent implements OnInit {
     passwordFormControl: new FormControl('', {
         validators: Validators.required,
     }),
-    fullnameFormControl: new FormControl('', {
-        validators: Validators.required,
-    }),
-    emailFormControl: new FormControl('', {
-        validators: Validators.required,
-    }),
-    phoneFormControl: new FormControl('', {
-        validators: Validators.required,
-    }),
+    fullnameFormControl: new FormControl(''),
+    emailFormControl: new FormControl(''),
+    phoneFormControl: new FormControl(''),
 })
   constructor(private router: Router, private toastService: NbToastrService, private registerService: RegisterService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   register() {
+    console.log(this.registerFormGroup)
     if (!this.registerFormGroup.valid) {
+      console.log('test')
         this.toastService.show('Username and password is required !', 'Error', {
             status: 'danger',
             position: NbGlobalPhysicalPosition.BOTTOM_RIGHT,

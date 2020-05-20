@@ -1,14 +1,12 @@
-
 const express = require('express')
-const multer = require('multer')
-const router = express.Router()
+const manageruserRouter = express.Router()
 const db = require('../../../services/db')
 const commonService = require('../../../services/common')
 
 
 
 
-router.post('/list', (req, res) => {
+manageruserRouter.post('/list', (req, res) => {
             const user_username = req.body.user_username || []
             const sql = `
         SELECT user_username, user_fullname, user_email, user_phone
@@ -33,16 +31,16 @@ router.post('/list', (req, res) => {
         })
 })
 
-router.post('/create-user', async (req, res) => {
+manageruserRouter.post('/create-user', async (req, res) => {
     try {
-        const { input } = req.body
+        console.log('testg')
         const {
             column_username,
             column_password,
             column_fullname,
             column_email,
             column_phone,
-        } = input
+        } = req.body
         const sql = `
             INSERT INTO ec_users (user_id, user_username, user_fullname, user_email, user_phone, user_password)
             VAlUES ('${commonService.uuidv4()}','${column_username}', '${column_fullname}', '${column_email}', '${column_phone}','${column_password}')
@@ -77,7 +75,7 @@ router.post('/create-user', async (req, res) => {
     }
 })
 
-router.post('/delete-user', async (req, res) => {
+manageruserRouter.post('/delete-user', async (req, res) => {
     try {
         const { user_username } = req.body
         const arrCells = [user_username]
@@ -108,7 +106,7 @@ router.post('/delete-user', async (req, res) => {
     }
 })
 
-router.post('/edit-user', async (req, res) => {
+manageruserRouter.post('/edit-user', async (req, res) => {
     try {
         const { input } = req.body
         const {
@@ -160,4 +158,4 @@ router.post('/edit-user', async (req, res) => {
 
 
 
-module.exports = router
+module.exports = manageruserRouter

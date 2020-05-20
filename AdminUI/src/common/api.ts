@@ -6,6 +6,6 @@ export const allAPI = {
     /** Authen */
     authen_login: `${apiURL}/authen/login`,
     //register
-    admin_manage_users_create_user: `${apiURL}/manage-users/create-user`,
-    
+    admin_manage_users_create_user: `${apiURL}/authen/register`,
+
 }
